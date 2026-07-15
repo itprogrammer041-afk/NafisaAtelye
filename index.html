@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafisa Atelye | Premium Tikuvchilik & Dizayn</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #c59b6c;       /* Rich luxurious gold/bronze */
+            --primary-dark: #a0784c;
+            --primary-light: #f4eae1;
+            --dark: #1e1e1e;          /* Elegant near-black */
+            --dark-subtle: #4a4a4a;
+            --light-bg: #faf8f5;      /* Warm premium cream */
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar customization */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(197, 155, 108, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(197, 155, 108, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30,30,30,0.7) 0%, rgba(10,10,10,0.5) 100%), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80') no-repeat center center/cover;
+            height: 65vh;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light-bg));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            color: var(--white);
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #eaeaea;
+        }
+
+        /* Info Features Section */
+        .features-container {
+            max-width: 1200px;
+            margin: -60px auto 60px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 35px 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--dark-subtle);
+        }
+
+        /* Portfolio / Catalog Section */
+        .catalog-section {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            color: var(--dark-subtle);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Category Filter Buttons */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            border: 1px solid #e0e0e0;
+            color: var(--dark);
+            padding: 10px 24px;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(197, 155, 108, 0.3);
+        }
+
+        /* Grid Display of Outfits */
+        .outfit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .outfit-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .outfit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .outfit-img-wrapper {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .outfit-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .outfit-card:hover .outfit-img {
+            transform: scale(1.08);
+        }
+
+        .outfit-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(30, 30, 30, 0.85);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: var(--radius-lg);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+        }
+
+        .outfit-price {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5px 14px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .outfit-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .outfit-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .outfit-desc {
+            font-size: 14px;
+            color: var(--dark-subtle);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .outfit-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-order-card {
+            flex-grow: 1;
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            border: none;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-order-card:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Call To Action Contact Box */
+        .cta-section {
+            background-color: var(--primary-light);
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-container h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta-container p {
+            font-size: 16px;
+            color: var(--dark-subtle);
+            margin-bottom: 35px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .btn-tg { background-color: #24a1de; }
+        .btn-inst { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-call { background-color: #2ecc71; }
+
+        .btn-social:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #b0b0b0;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        .admin-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+            transition: var(--transition);
+            border: 1px dashed #444;
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+        }
+
+        .admin-trigger:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* --- ADMIN PANEL MODAL & SYSTEM --- */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .admin-panel {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            width: 100%;
+            max-width: 1000px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            animation: modalFadeIn 0.4s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .admin-header {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 20px 25px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .admin-title-area {
+            margin-right: auto;
+        }
+
+        .admin-header h2 {
+            color: var(--white);
+            font-size: 22px;
+        }
+
+        .admin-header p {
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .btn-admin-close {
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-admin-close:hover {
+            color: var(--primary);
+        }
+
+        .admin-body {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            height: calc(90vh - 80px);
+            overflow: hidden;
+        }
+
+        @media (max-width: 850px) {
+            .admin-body {
+                grid-template-columns: 1fr;
+                overflow-y: auto;
+                height: auto;
+            }
+        }
+
+        /* Form side */
+        .admin-form-container {
+            padding: 25px;
+            border-right: 1px solid #eee;
+            overflow-y: auto;
+            background-color: #fcfcfc;
+        }
+
+        .admin-section-subtitle {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--dark-subtle);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(197, 155, 108, 0.15);
+        }
+
+        /* Styled Camera/Upload input */
+        .image-upload-wrapper {
+            border: 2px dashed #ccc;
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+
+        .image-upload-wrapper:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .image-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .upload-text {
+            font-size: 12px;
+            color: var(--dark-subtle);
+        }
+
+        .image-preview-box {
+            margin-top: 15px;
+            height: 160px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            display: none;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .image-preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .remove-preview-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(230, 57, 70, 0.9);
+            color: var(--white);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .remove-preview-btn:hover {
+            background-color: #e63946;
+        }
+
+        .btn-submit-dress {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(197, 155, 108, 0.2);
+        }
+
+        .btn-submit-dress:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Items list side */
+        .admin-items-container {
+            padding: 25px;
+            overflow-y: auto;
+            background-color: var(--white);
+        }
+
+        .admin-table-wrapper {
+            margin-top: 15px;
+        }
+
+        .admin-item-card {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #eee;
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            background-color: #fafafa;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .admin-item-card:hover {
+            box-shadow: var(--shadow-sm);
+            border-color: #e0e0e0;
+        }
+
+        .admin-item-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .admin-item-details {
+            flex-grow: 1;
+        }
+
+        .admin-item-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .admin-item-meta {
+            font-size: 12px;
+            color: var(--dark-subtle);
+            margin-top: 2px;
+        }
+
+        .btn-item-delete {
+            background-color: transparent;
+            color: #e63946;
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-item-delete:hover {
+            background-color: #e63946;
+            color: var(--white);
+            border-color: #e63946;
+        }
+
+        .empty-admin-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #aaa;
+        }
+
+        .empty-admin-state i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Interactive Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            z-index: 10002;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-group">
+                <div class="logo-icon"><i class="fa-solid fa-scissors"></i></div>
+                <div class="logo-text">Nafisa<span>Atelye</span></div>
+            </a>
+            <div class="nav-actions">
+                <a href="tel:+998901234567" id="nav-phone" class="btn-contact">
+                    <i class="fa-solid fa-phone"></i> Aloqa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Showcase Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Premium Atelye</span>
+            <h1 id="view-title">Eksklyuziv Tikuvchilik San'ati</h1>
+            <p id="view-subtitle">15 yillik tajribaga ega bo'lgan professional kiyim tikish, nozik bichish va eng zamonaviy fasonlar.</p>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="features-container">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>O'ziga Xos Dizayn</h3>
+            <p>Siz uchun maxsus ishlab chiqilgan shaxsiy dizayn va mukammal bichish xizmatlari.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+            <h3>15 Yillik Tajriba</h3>
+            <p>Har bir buyurtmada yuqori sifatli matolar, mustahkam tikuv va professionallik.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+            <h3>Tez va Kafolatli</h3>
+            <p>Belgilangan muddatda ishlarni tayyorlash va kiyimning uzoq muddat xizmat qilishi.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Catalog Section -->
+    <section class="catalog-section">
+        <div class="section-header">
+            <h2>Bizning Namunalar & Fasonlar</h2>
+            <p>Atelyemizda tikilgan so'nggi go'zal ko'ylaklar, fasonlar va tayyorlangan to'shaklar to'plami bilan tanishing.</p>
+        </div>
+
+        <!-- Filter controls -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCatalog('all')">Barchasi</button>
+            <button class="filter-btn" onclick="filterCatalog('koylak')">Ko'ylaklar</button>
+            <button class="filter-btn" onclick="filterCatalog('fason')">Fasonlar</button>
+            <button class="filter-btn" onclick="filterCatalog('sarpo')">Sarpo & To'shaklar</button>
+        </div>
+
+        <!-- Outfits Grid -->
+        <div class="outfit-grid" id="outfit-grid">
+            <!-- Outfits dynamically rendered here -->
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Orzungizdagi Libosni Buyurtma Bering</h2>
+            <p>Didingiz va o'lchamlaringizga mos keladigan libos fasonini biz bilan birga tanlang. Ijtimoiy tarmoqlarimiz yoki telefon orqali bemalol bog'laning!</p>
+            <div class="social-buttons">
+                <a href="https://t.me/naf1sa_atelye" id="btn-tg" class="btn-social btn-tg" target="_blank">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+                <a href="https://instagram.com/_naf1sa_atelye" id="btn-inst" class="btn-social btn-inst" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="tel:+998901234567" id="btn-call" class="btn-social btn-call">
+                    <i class="fa-solid fa-phone"></i> Qo'ng'iroq
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 Nafisa Atelye. Barcha huquqlar himoyalangan.</p>
+        <div>
+            <a href="#" class="admin-trigger" onclick="openAdminPanel(event)">
+                <i class="fa-solid fa-user-gear"></i> Admin Panel (Tizim boshqaruvi)
+            </a>
+        </div>
+    </footer>
+
+    <!-- ADMIN MODAL INTERFACE -->
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-panel">
+            <div class="admin-header">
+                <div class="admin-title-area">
+                    <h2>Boshqaruv Paneli</h2>
+                    <p>Yangi ko'ylak yoki mahsulot rasmga olib yoki yuklab qo'shish va tahrirlash</p>
+                </div>
+                <button class="btn-admin-close" onclick="closeAdminPanel()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="admin-body">
+                <!-- Left Column: Add dress form -->
+                <div class="admin-form-container">
+                    <h3 class="admin-section-subtitle">Yangi Mahsulot Qo'shish</h3>
+                    
+                    <div class="form-group">
+                        <label>Rasm yuklash / Suratga olish</label>
+                        <div class="image-upload-wrapper">
+                            <i class="fa-solid fa-camera upload-icon"></i>
+                            <div class="upload-text">Rasm tanlang yoki Suratga oling</div>
+                            <!-- Support mobile camera capture -->
+                            <input type="file" id="dress-image-input" accept="image/*" capture="environment" onchange="previewSelectedImage(event)">
+                        </div>
+                        <div class="image-preview-box" id="preview-box">
+                            <img id="preview-img" src="" alt="Preview">
+                            <button class="remove-preview-btn" onclick="clearImagePreview()"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kiyim / Mahsulot Nomi</label>
+                        <input type="text" id="dress-title" class="form-control" placeholder="Masalan: Elegant Kechki Libos">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kategoriya</label>
+                        <select id="dress-category" class="form-control">
+                            <option value="koylak">Ko'ylak</option>
+                            <option value="fason">Fason</option>
+                            <option value="sarpo">Sarpo & To'shak</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Narxi (Ixtiyoriy)</label>
+                        <input type="text" id="dress-price" class="form-control" placeholder="Masalan: Kelishilgan narxda yoki 250,000 so'm">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tavsif (Tafsilotlar)</label>
+                        <textarea id="dress-desc" class="form-control" rows="3" placeholder="Tikilgan matosi, o'lchamlari va fason xususiyatlari haqida yozing..."></textarea>
+                    </div>
+
+                    <button class="btn-submit-dress" onclick="saveNewDress()"><i class="fa-solid fa-circle-plus"></i> Saytga Qo'shish</button>
+                </div>
+
+                <!-- Right Column: Current dresses management -->
+                <div class="admin-items-container">
+                    <h3 class="admin-section-subtitle">Mavjud Mahsulotlar Ro'yxati</h3>
+                    <div class="admin-table-wrapper" id="admin-items-list">
+                        <!-- Items dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toastBox">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Amal bajarildi!</span>
+    </div>
+
+    <script>
+        // Initial / Default sample items for visual beauty
+        const defaultDresses = [
+            {
+                id: 'def-1',
+                title: "Elegant Kechki Libos",
+                category: "koylak",
+                price: "Kelishilgan holda",
+                desc: "Eng nafis ipak va shifon matolaridan maxsus buyurtma asosida tikilgan, qulay va hashamatli kechki ko'ylak fasoni.",
+                image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 'def-2',
+                title: "Zamonaviy Sharqona Fason",
+                category: "fason",
+                price: "250,000 so'm",
+                desc: "An'anaviy adras elementlari bilan bezatilgan zamonaviy ayollar kiyimi. Kundalik va marosimlar uchun qulay.",
+                image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 'def-3',
+                title: "Premium Sarpo To'shaklari",
+                category: "sarpo",
+                price: "Kelishilgan holda",
+                desc: "Kelinlar sarposi uchun eng sifatli baxmal matolardan tayyorlangan yumshoq to'shaklar va yostiqlar to'plami.",
+                image: "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        let outfits = [];
+        let base64ImageString = "";
+
+        // On App Load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadOutfits();
+            renderCatalog();
+        });
+
+        // Load outfits from local storage or set defaults
+        function loadOutfits() {
+            const stored = localStorage.getItem('nafisa_outfits');
+            if (stored) {
+                outfits = JSON.parse(stored);
+            } else {
+                outfits = [...defaultDresses];
+                localStorage.setItem('nafisa_outfits', JSON.stringify(outfits));
+            }
+        }
+
+        // Render main grid catalog
+        function renderCatalog(filter = 'all') {
+            const grid = document.getElementById('outfit-grid');
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? outfits : outfits.filter(item => item.category === filter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #888;">
+                        <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 48px; margin-bottom: 15px; color: var(--primary);"></i>
+                        <h3 style="font-family: 'Poppins', sans-serif; font-size: 18px; margin-bottom: 5px;">Hozircha kiyimlar mavjud emas</h3>
+                        <p style="font-size: 14px;">Admin panel orqali rasmga olib yangi kiyimlar qo'shishingiz mumkin!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `outfit-card`;
+                
+                let categoryLabel = "Ko'ylak";
+                if(item.category === 'fason') categoryLabel = "Fason";
+                if(item.category === 'sarpo') categoryLabel = "Sarpo / To'shak";
+
+                // Generate a custom link to telegram to order this specific item
+                const orderText = encodeURIComponent(`Salom! Menga mana shu mahsulotingiz juda yoqdi: "${item.title}". Bu haqida batafsil ma'lumot bera olasizmi?`);
+                const telegramLink = `https://t.me/naf1sa_atelye?text=${orderText}`;
+
+                card.innerHTML = `
+                    <div class="outfit-img-wrapper">
+                        <img src="${item.image}" alt="${item.title}" class="outfit-img" loading="lazy">
+                        <span class="outfit-badge">${categoryLabel}</span>
+                        <span class="outfit-price">${item.price || 'Kelishilgan'}</span>
+                    </div>
+                    <div class="outfit-info">
+                        <h3 class="outfit-title">${item.title}</h3>
+                        <p class="outfit-desc">${item.desc}</p>
+                        <div class="outfit-actions">
+                            <a href="${telegramLink}" class="btn-order-card" target="_blank">
+                                <i class="fa-brands fa-telegram"></i> Telegramda Buyurtma berish
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter functionality
+        function filterCatalog(category) {
+            // Update active state on button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            renderCatalog(category);
+        }
+
+        // Handle Image Selection and Conversion to Base64 (Supports camera capture directly too!)
+        function previewSelectedImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    base64ImageString = e.target.result;
+                    document.getElementById('preview-img').src = base64ImageString;
+                    document.getElementById('preview-box').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Clear Image Preview
+        function clearImagePreview() {
+            document.getElementById('dress-image-input').value = '';
+            document.getElementById('preview-img').src = '';
+            document.getElementById('preview-box').style.display = 'none';
+            base64ImageString = "";
+        }
+
+        // Save New Outfit
+        function saveNewDress() {
+            const title = document.getElementById('dress-title').value.trim();
+            const category = document.getElementById('dress-category').value;
+            const price = document.getElementById('dress-price').value.trim();
+            const desc = document.getElementById('dress-desc').value.trim();
+
+            if (!base64ImageString) {
+                showToast("Iltimos, avval mahsulot rasmini kiriting yoki rasmga oling!", "fa-circle-exclamation");
+                return;
+            }
+            if (!title) {
+                showToast("Iltimos, kiyim nomini kiriting!", "fa-circle-exclamation");
+                return;
+            }
+
+            const newDress = {
+                id: 'dress-' + Date.now(),
+                title: title,
+                category: category,
+                price: price || 'Kelishilgan holda',
+                desc: desc || 'Batafsil malumot uchun boglaning.',
+                image: base64ImageString
+            };
+
+            outfits.unshift(newDress); // Add to the top
+            localStorage.setItem('nafisa_outfits', JSON.stringify(outfits));
+
+            // Reset inputs
+            document.getElementById('dress-title').value = '';
+            document.getElementById('dress-price').value = '';
+            document.getElementById('dress-desc').value = '';
+            clearImagePreview();
+
+            // Refresh UI
+            renderCatalog();
+            renderAdminItems();
+            showToast("Muvaffaqiyatli qo'shildi!");
+        }
+
+        // Delete Outfit Item
+        function deleteOutfit(id) {
+            if (confirm("Haqiqatdan ham ushbu kiyimni o'chirib tashlamoqchimisiz?")) {
+                outfits = outfits.filter(item => item.id !== id);
+                localStorage.setItem('nafisa_outfits', JSON.stringify(outfits));
+                
+                renderCatalog();
+                renderAdminItems();
+                showToast("Kiyim o'chirildi.");
+            }
+        }
+
+        // Toast Messages
+        function showToast(message, iconClass = "fa-circle-check") {
+            const toast = document.getElementById('toastBox');
+            const msgSpan = document.getElementById('toastMessage');
+            
+            toast.querySelector('i').className = `fa-solid ${iconClass}`;
+            msgSpan.innerText = message;
+            
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Open & Close Admin Modal
+        function openAdminPanel(event) {
+            event.preventDefault();
+            const password = prompt("Boshqaruv paneliga kirish uchun parolni kiriting:");
+            if (password === "1234") {
+                document.getElementById('adminModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Stop background scrolling
+                renderAdminItems();
+            } else if (password !== null) {
+                alert("Noto'g'ri parol kiritildi!");
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Render Items inside Admin list
+        function renderAdminItems() {
+            const listContainer = document.getElementById('admin-items-list');
+            listContainer.innerHTML = '';
+
+            if (outfits.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="empty-admin-state">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p>Hozircha saytda hech qanday mahsulot yo'q.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            outfits.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'admin-item-card';
+                
+                let catLabel = "Ko'ylak";
+                if(item.category === 'fason') catLabel = "Fason";
+                if(item.category === 'sarpo') catLabel = "Sarpo / To'shak";
+
+                itemCard.innerHTML = `
+                    <img src="${item.image}" alt="" class="admin-item-thumbnail">
+                    <div class="admin-item-details">
+                        <div class="admin-item-name">${item.title}</div>
+                        <div class="admin-item-meta">${catLabel} | ${item.price}</div>
+                    </div>
+                    <button class="btn-item-delete" onclick="deleteOutfit('${item.id}')" title="O'chirish">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                `;
+                listContainer.appendChild(itemCard);
+            });
+        }
+    </script>
+</body>
+</html>
